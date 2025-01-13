@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'mclaren';
+    src: url('/public/assets/font/McLaren-Regular.ttf') format('truetype');
+}
+
+body{
+    margin: 0;
+    font-family: 'mclaren';
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 10vw;
+    gap: 5vw;
+
+}
+.main_page{
+    background-image: url(../../../public/assets/img/leafs.png);
+    background-size: 190%;
+    background-repeat: no-repeat;
+    height: 180vw;
+}
+.main_circle{
+    display: flex;
+    background-color: #36BC96;
+    font-size: 6vw;
+    height: 60vw;
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: solid 1.5vw #427897;
+}
+.tempodiv{
+    width: 80%;
+}
+
+.right_circle{
+    margin-left: 15vw;
+}
+
+a{
+    display: inline-block;
+}
+
+h1{
+    color: black;
+}

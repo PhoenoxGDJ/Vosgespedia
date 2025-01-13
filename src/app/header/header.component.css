@@ -1,0 +1,28 @@
+header{
+    padding-top: 2vw;
+    padding-right: 2vw;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2vw;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+.head_circle{
+    display: flex;
+    width: 12vw;
+    height: 12vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #36BC96;
+    border-radius: 50%;
+    font-size: 8vw;
+    border: solid 1vw #427897;
+}
+.burger_menu{
+    width: 15vw;
+    height: 15vw;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg);
+}

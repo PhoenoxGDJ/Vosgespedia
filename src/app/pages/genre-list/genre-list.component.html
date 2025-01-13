@@ -1,0 +1,8 @@
+<main class="fox">
+    @for (genre of myGenres; track genre.gid) {
+        <a class="main_circle left_circle" routerLink="/animals">
+            <router-outlet></router-outlet>
+        <app-genre [genre]="genre"></app-genre>
+        </a>
+    }
+</main>

@@ -1,0 +1,53 @@
+.animal_figure{
+    width: 60vw;
+    height: 60vw;
+    border-radius: 30px;
+    border: solid 10px #DC9E77;
+    overflow: hidden;   
+}
+.animal_name{
+    font-size: 8vw;
+    margin: 0px;
+    color: #36BC96;
+}
+.animal_data{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 4vw;
+    row-gap: 30px;
+    margin-bottom: 200px;
+    color: #DC9E77;
+}
+.lino{
+    color: #36BC96;
+}
+.fit_in{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.fox{
+    padding: 3%;
+    margin: 0%;
+    margin-top: 25vh;
+    background-color: #23422B;
+}
+.container_animal{
+    
+}
+.container_lien{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    font-size: 4vw;
+}
+.lien_trace{
+    text-align: center;
+    align-content: center;
+    background-color: #fff;
+    width: 60vw;
+    border-radius: 30px;
+    height: 50vw;
+border: solid 3px #DC9E77;
+}
