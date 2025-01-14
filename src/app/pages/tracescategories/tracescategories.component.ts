@@ -21,7 +21,7 @@ export class TracescategoriesComponent implements OnInit {
   ngOnInit(): void{
     this.categoryService.getCategoryListByAPI()
     .subscribe({
-      next: (data) => this.myTraces = data,
+      next: (data) => null/* this.myTraces = data */,
       error: (err) => console.error('Erreur lors de la récupération des Categories', err),
       complete: () => console.log('Récupération des traces terminée')
     });
