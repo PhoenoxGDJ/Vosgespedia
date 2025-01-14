@@ -9,10 +9,12 @@ body{
 }
 
 main{
+    background-image: url(./../../../../public/assets/img/questionmark.png);
     display: flex;
     flex-direction: column;
     padding: 10vw;
     gap: 5vw;
+    background-color: #36BC96;
 
 }
 .main_page{
@@ -23,8 +25,8 @@ main{
 }
 .main_circle{
     display: flex;
-    background-color: #36BC96;
-    font-size: 6vw;
+    background-color: #427897;
+    font-size: 5vw;
     height: 60vw;
     width: 60vw;
     justify-content: center;
