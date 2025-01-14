@@ -3,7 +3,7 @@
         <div class="animal_figure">
             <img [src]="animal.anim_image" alt="renard" class="fit_in" />
         </div>
-        <a class="main_circle left_circle" routerLink="/animalsolo">
+        <a class="main_circle left_circle" [routerLink]="'/animals/' + animal.anim_id">
         <h2 class="animal_name">{{animal.anim_name}}</h2>
         </a>
     </div>

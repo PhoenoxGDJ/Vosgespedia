@@ -1,30 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import { AnimalComponent } from "../../Stream/animal/animal.component";
+import { Component, Input, OnInit } from '@angular/core';
+import { AnimalComponent } from '../../Stream/animal/animal.component';
 import { Animal } from '../../models/animal';
 import { AnimalsService } from '../../Services/animals.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-animal-list',
   standalone: true,
   imports: [AnimalComponent],
   templateUrl: './animal-list.component.html',
-  styleUrl: './animal-list.component.css'
+  styleUrl: './animal-list.component.css',
 })
-export class AnimalListComponent implements OnInit{
-
+export class AnimalListComponent implements OnInit {
   animals!: Animal[];
 
-  constructor(private animalService : AnimalsService){
+  arg: string | null = '';
 
-  }
+  constructor(
+    private animalService: AnimalsService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.animalService.getAnimalListByAPI()
-    .subscribe({
-      next: (data) => this.animals = data,
-      error: (err) => console.error('Erreur lors de la récupération des Animaux', err),
-      complete: () => console.log('Récupération des animaux terminée')
+    this.route.paramMap.subscribe((params) => {
+      this.arg = params.get('arg');
+    });
+
+    if (typeof(this.arg) == null || typeof(this.arg) == undefined) {
+      this.arg = ""
+    }
+
+    this.animalService.getGenreAnimalListByAPI(this.arg).subscribe({
+      next: (data) => {
+        this.animals = data;
+      },
+      error: (err) =>
+        console.error('Erreur lors de la récupération des Categories', err),
+      complete: () => console.log('Récupération des categories terminée'),
     });
   }
 }
-

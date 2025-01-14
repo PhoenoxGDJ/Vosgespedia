@@ -34,11 +34,15 @@ export class AnimalsService {
 ];
   constructor(private httpClient : HttpClient) {}
 
-  getAnimalListByAPI(arg = ""): Observable<Animal[]>{
+  getAnimalListByAPI(arg: string | null): Observable<Animal[]>{
     return this.httpClient.get<Animal[]>(environment.api_url+'/animals/'+arg)
   }
 
-  getAnimTraces(arg = 0) : Observable<Trace[]>{
+  getGenreAnimalListByAPI(arg: string | null): Observable<Animal[]>{
+    return this.httpClient.get<Animal[]>(environment.api_url+'/genran/'+arg)
+  }
+
+  getAnimTraces(arg: string | null) : Observable<Trace[]>{
     return this.httpClient.get<Trace[]>(environment.api_url+'/cattr/'+arg)
   }
 }
