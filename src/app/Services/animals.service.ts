@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment.development';
 import { map } from 'rxjs';
 import { Observable } from 'rxjs';
+import { Trace } from '../models/trace';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,9 @@ export class AnimalsService {
 
   getAnimalListByAPI(arg = ""): Observable<Animal[]>{
     return this.httpClient.get<Animal[]>(environment.api_url+'/animals/'+arg)
+  }
+
+  getAnimTraces(arg = 0) : Observable<Trace[]>{
+    return this.httpClient.get<Trace[]>(environment.api_url+'/cattr/'+arg)
   }
 }

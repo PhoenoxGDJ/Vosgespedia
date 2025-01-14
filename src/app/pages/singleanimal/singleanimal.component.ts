@@ -2,13 +2,15 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AnimalComponent } from '../../Stream/animal/animal.component';
 import { Animal } from '../../models/animal';
 import { AnimalsService } from '../../Services/animals.service';
+import { TraceComponent } from '../../Stream/trace/trace.component';
 
 
 @Component({
   selector: 'app-singleanimal',
   standalone: true,
   imports: [
-AnimalComponent
+AnimalComponent,
+TraceComponent
   ],
   templateUrl: './singleanimal.component.html',
   styleUrl: './singleanimal.component.css'
