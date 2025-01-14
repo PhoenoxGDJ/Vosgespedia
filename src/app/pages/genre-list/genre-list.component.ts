@@ -27,7 +27,10 @@ export class GenreListComponent implements OnInit{
     .subscribe({
       next: (data) => this.myGenres = data,
       error: (err) => console.error('Erreur lors de la récupération des Animaux', err),
-      complete: () => console.log('Récupération des animaux terminée')
+      complete: () => {
+        console.log('Récupération des animaux terminée');
+        console.log(this.myGenres);
+      }
     });
   }
 }
