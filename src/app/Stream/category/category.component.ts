@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Category } from '../../models/category';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
 })

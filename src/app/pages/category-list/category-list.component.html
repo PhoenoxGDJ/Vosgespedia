@@ -1,1 +1,6 @@
-<app-genre-list></app-genre-list>
+<main class="fox">
+    @for (category of categories; track category.caid) {
+        <app-category [category]="category" class="circle">
+        </app-category>
+    }
+</main>

@@ -2,16 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { GenreComponent } from '../../Stream/genre/genre.component';
 import { Genre } from '../../models/genre';
 import { GenreService } from '../../Services/genre.service';
-import { RouterLink } from '@angular/router';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-genre-list',
   standalone: true,
   imports: [
     GenreComponent,
-    RouterLink,
-    RouterOutlet
   ],
   templateUrl: './genre-list.component.html',
   styleUrl: './genre-list.component.css'

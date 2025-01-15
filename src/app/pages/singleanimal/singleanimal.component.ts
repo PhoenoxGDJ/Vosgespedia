@@ -21,11 +21,13 @@ export class SingleanimalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
+
 
     this.route.paramMap.subscribe((params) => {
       this.arg = params.get('arg');
     });
+
+    console.log(this.arg);
 
     this.animalService.getAnimalByAPI(this.arg).subscribe({
       next: (data) => {

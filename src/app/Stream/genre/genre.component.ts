@@ -12,11 +12,11 @@ import { RouterLink } from '@angular/router';
 export class GenreComponent implements OnInit{
   @Input() genre! : Genre;
 
-  gid! : number;
+  id! : number;
   name! : string;
 
   ngOnInit(): void {
-    this.gid = 1;
+    this.id = 1;
     this.name = "mammifere";
   }
 }

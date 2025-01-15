@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../../models/category';
 import { CategoryService } from '../../Services/categories.service';
-import { GenreListComponent } from '../genre-list/genre-list.component';
+import { CategoryComponent } from "../../Stream/category/category.component";
 @Component({
-  selector: 'app-animal-list',
+  selector: 'app-category-list',
   standalone: true,
   imports: [
-    GenreListComponent
-  ],
+    CategoryComponent
+],
   templateUrl: './category-list.component.html',
   styleUrl: './category-list.component.css'
 })
@@ -24,7 +24,9 @@ export class CategoryListComponent implements OnInit{
     .subscribe({
       next: (data) => this.categories = data,
       error: (err) => console.error('Erreur lors de la récupération des Categories', err),
-      complete: () => console.log('Récupération des categories terminée')
+      complete: () => {
+        console.log('Récupération des categories terminée')
+      }
     });
   }
 }
