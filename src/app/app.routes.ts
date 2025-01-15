@@ -6,6 +6,7 @@ import { TracesComponent } from './pages/traces/traces.component';
 import { LoginComponent } from './pages/login/login.component';
 import { GenreListComponent } from './pages/genre-list/genre-list.component';
 import { CategoryListComponent } from './pages/category-list/category-list.component';
+import { SingleanimalComponent } from './pages/singleanimal/singleanimal.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -18,7 +19,7 @@ export const routes: Routes = [
 
     { path: 'login', component: LoginComponent },
 
-    { path: 'animals/:arg', component: AnimalComponent},
+    { path: 'animal/:arg', component: SingleanimalComponent},
 
     { path: 'traces/:arg', component: TracesComponent},
     

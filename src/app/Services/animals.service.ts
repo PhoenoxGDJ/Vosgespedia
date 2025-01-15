@@ -38,6 +38,10 @@ export class AnimalsService {
     return this.httpClient.get<Animal[]>(environment.api_url+'/animals/'+arg)
   }
 
+  getAnimalByAPI(arg: string | null): Observable<Animal>{
+    return this.httpClient.get<Animal>(environment.api_url+'/animals/'+arg)
+  }
+
   getGenreAnimalListByAPI(arg: string | null): Observable<Animal[]>{
     return this.httpClient.get<Animal[]>(environment.api_url+'/genran/'+arg)
   }

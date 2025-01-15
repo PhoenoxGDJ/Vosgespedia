@@ -1,18 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AnimalComponent } from '../../Stream/animal/animal.component';
 import { Animal } from '../../models/animal';
 import { AnimalsService } from '../../Services/animals.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-animal-list',
+  selector: 'app-singleanimal',
   standalone: true,
-  imports: [AnimalComponent],
-  templateUrl: './animal-list.component.html',
-  styleUrl: './animal-list.component.css',
+  imports: [],
+  templateUrl: './singleanimal.component.html',
+  styleUrl: './singleanimal.component.css',
 })
-export class AnimalListComponent{
-  animals!: Animal[];
+export class SingleanimalComponent implements OnInit {
+  animal!: Animal;
 
   arg: string | null = '';
 
@@ -22,17 +21,21 @@ export class AnimalListComponent{
   ) {}
 
   ngOnInit(): void {
+    
+
     this.route.paramMap.subscribe((params) => {
       this.arg = params.get('arg');
     });
 
-    this.animalService.getGenreAnimalListByAPI(this.arg).subscribe({
+    this.animalService.getAnimalByAPI(this.arg).subscribe({
       next: (data) => {
-        this.animals = data;
+        this.animal = data;
       },
       error: (err) =>
         console.error('Erreur lors de la récupération des Categories', err),
-      complete: () => console.log('Récupération des categories terminée'),
+      complete: () => {
+        console.log('Récupération des categories terminée')
+      },
     });
   }
 }
